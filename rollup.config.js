@@ -1,5 +1,5 @@
-import babel from "rollup-plugin-babel";
-import buble from "rollup-plugin-buble";
+import babel from "@rollup/plugin-babel";
+import buble from "@rollup/plugin-buble";
 import { terser } from "rollup-plugin-terser";
 
 const config = {
@@ -14,6 +14,7 @@ const config = {
     buble({ objectAssign: true }),
     babel({
       babelrc: false,
+      babelHelpers: 'bundled',
       plugins: ["@babel/plugin-transform-object-assign"]
     })
   ],
@@ -24,6 +25,7 @@ if (process.env.NODE_ENV === "production") {
   config.plugins.push(
     babel({
       babelrc: false,
+      babelHelpers: 'bundled',
       plugins: [
         [
           "transform-react-remove-prop-types",
