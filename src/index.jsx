@@ -340,6 +340,7 @@ class ReactSwitch extends Component {
           role="switch"
           disabled={disabled}
           style={inputStyle}
+          // eslint-disable-next-line react/jsx-props-no-spreading
           {...rest}
           /* anything below should NOT get overriden by ...rest */
           ref={this.$getInputRef}
